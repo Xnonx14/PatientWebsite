@@ -227,21 +227,120 @@
 				</tr>
 			</table>
 			</div>
-			<div>
+			<br><br>
+			SOB
+			<div id="page2"> 
 				<table align="center" style = "border: 2px solid black; width: 500px; height: 100px; border-collapse:collapse">
 					<tr style="border-bottom:1pt dotted black;">
 						<td align="left">SOB</td>
+						<td align="left">
+							<input type="radio" name="s0" value="" checked> <br>
+							<input type="radio" name="s0" value=" Patient denies SOB"> No SOB <br>
+							<input type="radio" name="s0" value=" Patient reports SOB with exertion"> With Exertion <br>
+							<input type="radio" name="s0" value=" Patient reports SOB at rest"> At Rest <br>
+						</td>
 					<tr style="border-bottom:1pt dotted black;">
 						<td align="left">SOB Duration <br>
-					<tr style="border-bottom:1pt dotted black;">
-						<td align="left">Palpitations <br>
-					<tr style="border-bottom:1pt dotted black;">
-						<td align="left">Palps Duration <br>
-					<tr style="border-bottom:1pt dotted black;">
-						<td align="left">Syncope <br>
+						<td align="left">
+							<input type="radio" name="s1" value="" checked> <br>
+							<input type="radio" name="s1" value=" for the past few days"> Days<br>
+							<input type="radio" name="s1" value=" for the past few weeks"> Weeks <br>
+							<input type="radio" name="s1" value=" for the past few months"> Months <br>
+							<input type="radio" name="s1" value=" for the past few years"> Years <br>
+						</td>
 				</table>
 			</div>
 			<br><br>
+			Palpitations
+			<div id="palps">
+				<table align="center" style = "border: 2px solid black; width: 500px; height: 100px; border-collapse:collapse">
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Palpitations <br>
+					<td align = "left">
+						<input type="radio" name="s2" value="" checked> <br>
+						<input type="radio" name="s2" value=" Patient reports palpitations"> Yes Palps<br>
+						<input type="radio" name="s2" value=" Patient denies palpitations"> No Palps <br>
+					</td>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align = "left">Details
+					<td align = "left" style="border-right: 1pt dotted black;">
+						<input type="radio" name="s3" value="" checked> <br>
+						<input type="radio" name="s3" value=" described as fast heartbeats"> Fast<br>
+						<input type="radio" name="s3" value=" described as strong but not fast heartbeats"> Strong(Not Fast) <br>
+					</td>
+					<td align = "left" style="border-right: 1pt dotted black;">
+						<input type="radio" name="s4" value="" checked> <br>
+						<input type="radio" name="s4" value=" occurring with exertion"> With Exertion<br>
+						<input type="radio" name="s4" value=" occurring at rest"> At Rest<br>
+					</td>
+					<td align = "left" style="border-right: 1pt dotted black;">
+						<input type="radio" name="s5" value="" checked> <br>
+						<input type="radio" name="s5" value=" regular in rhythm"> Regular<br>
+						<input type="radio" name="s5" value=" irregular in rhythm"> Irregular<br>
+					</td>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Palps Duration <br>
+					<td align="left">
+						<input type="radio" name="s6" value="" checked> <br>
+						<input type="radio" name="s6" value="lasting seconds"> Seconds<br>
+						<input type="radio" name="s6" value="lasting minutes"> Minutes <br>
+						<input type="radio" name="s6" value="lasting hours"> Hours <br>
+						<input type="radio" name="s6" value="lasting days"> Days <br>
+					</td>
+				</table>
+			</div>
+			<br><br>
+			Syncope
+			<div id="">
+				<table align="center" style = "border: 2px solid black; width: 500px; height: 100px; border-collapse:collapse">
+					<tr style="border-bottom:1pt dotted black;">
+						<td align="left">Syncope <br>
+						<td align="left">
+							<input type="radio" name="s7" value="" checked> <br>
+							<input type="radio" name="s7" value="  Patient recalls episodes of syncope"> Syncope <br>
+							<input type="radio" name="s7" value="  Patient denies history of syncope"> No Syncope <br>
+						</td>
+				</table>
+			</div>
+			<br><br>
+			<div>
+				Final Touches<br>
+				<table align="center" style = "border: 2px solid black; width: 500px; height: 100px; border-collapse:collapse">
+					<tr style="border-bottom:1pt dotted black;">
+						<td align="left">
+							<input name ="e0"  type="checkbox" value="Chest discomfort with exertion -"> CP+<br>
+							<input name ="e1"  type="checkbox" value="Chest discomfort, non-exertional -"> CP- <br>
+							<input name ="e2"  type="checkbox" value="Shortness of Breath -"> SOB <br>
+							<input name ="e3"  type="checkbox" value="Palpitations -"> Palps<br>
+							<input name ="e4"  type="checkbox" value="Syncope -"> Syncope<br>
+							<input name ="e5"  type="checkbox" value="Dizziness -"> Dizziness<br>
+							<input name ="e6"  type="checkbox" value="HTN -"> HTN<br>
+							<input name ="e7"  type="checkbox" value="Abnormal ECG -"> ECG<br>
+							<input name ="e8"  type="checkbox" value="Cardiac clearance -"> CC<br>
+							<input name ="e9"  type="checkbox" value="Murmur -"> Murmur<br>
+							<input name ="e10"  type="checkbox" value="Atrial Fibrillation -"> AFID<br>
+						</td>
+					</tr>
+					<tr style="border-bottom:1pt dotted black;">
+						<td>
+							<input name ="e17"  type="checkbox" value="Followup -"> Followup<br>
+						</td>
+					</tr>
+					<tr style="border-bottom:1pt dotted black;">
+						<td align="left">
+							<input name ="e11"  type="checkbox" value="echo"> TTE<br>
+							<input name ="e12"  type="checkbox" value="treadmill stress test"> STR<br>
+							<input name ="e13"  type="checkbox" value="stress echo"> STE<br>
+							<input name ="e14"  type="checkbox" value="nuclear stress test"> NUC<br>
+							<input name ="e15"  type="checkbox" value="Holter"> Holter<br>
+							<input name ="e16"  type="checkbox" value="CXR"> CXR<br>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+
+
 			<input type = "submit" value = "Generate">
 		</form>
 	</div>
