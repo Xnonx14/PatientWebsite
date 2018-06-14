@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PatientWebsite</title>
+
+  <!-- Import and configure the Firebase SDK -->
+  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+  <script src="/__/firebase/5.0.0/firebase-app.js"></script>
+  <script src="/__/firebase/5.0.0/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+
+  <script type="text/javascript">
+    function login() {
+      if (firebase.auth().currentUser) {
+        firebase.auth().signOut();
+      }
+      document.getElementById('signout').disabled = true;
+    }
+    function initApp() {
+      // authentication listener
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          document.getElementById('signout').textContent = 'Sign out';
+        } else {
+          window.location.replace("/");
+        }
+        document.getElementById('signout').disabled = false;
+      });
+      document.getElementById('signout').addEventListener('click', login, false);
+    }
+	function toggleDisplay(){
+		if(document.getElementById("toggleCP").checked){
+			document.getElementById("testID").style.display = "contents";
+		}else{
+			document.getElementById("testID").style.display = "none";
+		}
+		
+	}
+
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+  
+	
+	
+  
+</head>
+<body style="background-color: rgb(105,105,105);">
+    <div>
+        <button id="signout" name="signout">Sign out</button>
+    </div>
+	<div style="background-color: rgb(94, 123, 184); width: 60%; border: 3px solid rgb(33, 105, 173); padding: 20px; text-align: center; margin: auto;">
+		<br><br>
+		Identification
+		<form action = "/generate" method = "POST">
+			<table align="center" style = "border: 2px solid black; width: 500px; height: 100px">
+                <tr>
+                    <td align="left">First Name</td>
+                    <td align="left">
+                        <input type="text" id="fName" name="fName"/>
+                    </td>
+                </tr>
+				<tr>
+                    <td align="left">Last Name</td>
+                    <td align="left">
+                        <input type="text" id="lName" name="lName"/>
+                    </td>
+                </tr>
+				<tr>
+                    <td align="left">Age</td>
+                    <td align="left">
+                        <input type="text" id="age" name = "age"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">Gender</td>
+                    <td align="left">
+                        <input type="radio" name="gender" value="male"> Male <br>
+						<input type="radio" name="gender" value="female"> Female <br>
+                    </td>
+                </tr>
+            </table>
+			<br><br>
+			Personal Medical History 
+			<table align="center" style = "border: 2px solid black; width: 500px; height: 100px">
+				<tr>
+                    <td align="left">
+                        <input id="cbcad" name="cbcad" type="checkbox"> CAD <br>
+						<input id="cbhtn" name="cbhtn" type="checkbox"> HTN <br>
+						<input id="cbdm" name="cbdm" type="checkbox"> DM <br>
+						<input id="cbhld" name="cbhld" type="checkbox"> HLD <br>
+                    </td>
+                </tr>
+			</table>
+			<br><br>
+			CC
+			<table align="center" style = "border: 2px solid black; width: 500px; height: 100px">
+				<tr>
+                    <td align="left">
+                        <input name ="cbcp"  type="checkbox"> Chest Pain <br>
+						<input name="cbsob"  type="checkbox"> SOB <br>
+						<input name="cbpalp"  type="checkbox"> Palpitations <br>
+						<input name="cbsync"  type="checkbox"> Syncope <br>
+						<input name="cbabnnl" type="checkbox"> Abnormal ECG <br>
+						<input name="cbdizz"  type="checkbox"> Dizziness <br>
+						<input name="cbmurm"  type="checkbox"> Murmur <br>
+						<input name="cbclear"  type="checkbox"> Clearance <br>
+						<input name="cbcadcc" type="checkbox"> CAD <br>
+						<input name="cbafib" type="checkbox"> AFIB <br>
+                    </td>
+                </tr>
+			</table>
+			<br><br>
+			Chest Pain Details <br><br>
+			<input id="toggleCP" name ="chestpain"  type="checkbox" onclick="toggleDisplay();"> Has Chest Pain <br>
+			<div id="testID" style="display: none"> 
+			<table align="center" style = "border: 2px solid black; width: 500px; height: 100px; border-collapse:collapse">
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Period</td>
+                    <td align="left">
+						<input type="radio" name="r1" value="" checked> <br>
+						<input type="radio" name="r1" value="hour"> Hours <br>
+						<input type="radio" name="r1" value="day"> Days <br>
+						<input type="radio" name="r1" value="week"> Weeks <br>
+						<input type="radio" name="r1" value="month"> Months <br>
+						<input type="radio" name="r1" value="year"> Years <br>
+                    </td>
+                </tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Range</td>
+					<td align="left">
+						<input name ="c0"  type="checkbox" checked> Default (ex: past few months)<br>
+						<input name ="c1"  type="checkbox"> 1 <br>
+						<input name ="c2"  type="checkbox"> 2<br>
+						<input name ="c3"  type="checkbox"> 3<br>
+						<input name ="c4"  type="checkbox"> 4<br>
+						<input name ="c5"  type="checkbox"> 5<br>
+						<input name ="c6"  type="checkbox"> 6<br>
+						<input name ="c7"  type="checkbox"> 7<br>
+						<input name ="c8"  type="checkbox"> 8<br>
+						<input name ="c9"  type="checkbox"> 9<br>
+						<input name ="c10"  type="checkbox"> 10<br>
+					</td>
+				</tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Location</td>
+					<td align="left">
+						<input type="radio" name="r4" value="" checked> <br>
+						<input type="radio" name="r4" value="substernal"> Substernal <br>
+						<input type="radio" name="r4" value="left-sided"> Left-Sided <br>
+						<input type="radio" name="r4" value="right-sided"> Right-Sided <br>
+						<input type="radio" name="r4" value="upper"> Upper <br>
+						<input type="radio" name="r4" value="lower"> Lower <br>
+                    </td>
+				</tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Quality</td>
+					<td align="left">
+						<input type="radio" name="r5" value="" checked> <br>
+						<input type="radio" name="r5" value="tightness"> Tightness <br>
+						<input type="radio" name="r5" value="sharp pain"> Sharp <br>
+						<input type="radio" name="r5" value="fullness"> Fullness <br>
+						<input type="radio" name="r5" value="vague in nature"> Vague in nature <br>
+                    </td>
+				</tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Exertion</td>
+					<td align="left">
+						<input type="radio" name="r6" value="" checked> <br>
+						<input type="radio" name="r6" value="worse with exertion"> Worse <br>
+						<input type="radio" name="r6" value="not related to exertion"> Not Related <br>
+                    </td>
+				</tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Pleuritic</td>
+					<td align="left">
+						<input type="radio" name="r7" value="" checked> <br>
+						<input type="radio" name="r7" value="worse with inspiration"> Worse <br>
+						<input type="radio" name="r7" value="not related to inspiration"> Not Related <br>
+                    </td>
+				</tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Tenderness</td>
+					<td align="left">
+						<input type="radio" name="r8" value="" checked> <br>
+						<input type="radio" name="r8" value="tender to touch"> Worse <br>
+						<input type="radio" name="r8" value="not tender to touch"> Not Related <br>
+                    </td>
+				</tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Meals</td>
+					<td align="left">
+						<input type="radio" name="r9" value="" checked> <br>
+						<input type="radio" name="r9" value="worse with meals"> Worse <br>
+						<input type="radio" name="r9" value="not related to meals"> Not Related <br>
+                    </td>
+				</tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Pain Duration</td>
+					<td align="left">
+						<input type="radio" name="r10" value="" checked> <br>
+						<input type="radio" name="r10" value="second"> Seconds <br>
+						<input type="radio" name="r10" value="minute"> Minutes <br>
+						<input type="radio" name="r10" value="hour"> Hours <br>
+						<input type="radio" name="r10" value="day"> Days <br>
+                    </td>
+				</tr>
+				<tr style="border-bottom:1pt dotted black;">
+					<td align="left">Range</td>
+					<td align="left">
+						<input name ="d0"  type="checkbox" checked> Default (ex: lasting minutes)<br>
+						<input name ="d1"  type="checkbox"> 1 <br>
+						<input name ="d2"  type="checkbox"> 2<br>
+						<input name ="d3"  type="checkbox"> 3<br>
+						<input name ="d4"  type="checkbox"> 4<br>
+						<input name ="d5"  type="checkbox"> 5<br>
+						<input name ="d6"  type="checkbox"> 6<br>
+						<input name ="d7"  type="checkbox"> 7<br>
+						<input name ="d8"  type="checkbox"> 8<br>
+						<input name ="d9"  type="checkbox"> 9<br>
+						<input name ="d10"  type="checkbox"> 10<br>
+					</td>
+				</tr>
+			</table>
+			</div>
+			<div>
+				<table align="center" style = "border: 2px solid black; width: 500px; height: 100px; border-collapse:collapse">
+					<tr style="border-bottom:1pt dotted black;">
+						<td align="left">SOB</td>
+					<tr style="border-bottom:1pt dotted black;">
+						<td align="left">SOB Duration <br>
+					<tr style="border-bottom:1pt dotted black;">
+						<td align="left">Palpitations <br>
+					<tr style="border-bottom:1pt dotted black;">
+						<td align="left">Palps Duration <br>
+					<tr style="border-bottom:1pt dotted black;">
+						<td align="left">Syncope <br>
+				</table>
+			</div>
+			<br><br>
+			<input type = "submit" value = "Generate">
+		</form>
+	</div>
+	
+	
+</body>
+</html>

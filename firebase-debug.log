@@ -1,0 +1,136 @@
+[debug] [2018-06-14T15:50:49.919Z] ----------------------------------------------------------------------
+[debug] [2018-06-14T15:50:49.921Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kevin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-06-14T15:50:49.922Z] CLI Version:   3.18.6
+[debug] [2018-06-14T15:50:49.922Z] Platform:      win32
+[debug] [2018-06-14T15:50:49.922Z] Node Version:  v8.11.1
+[debug] [2018-06-14T15:50:49.922Z] Time:          Thu Jun 14 2018 11:50:49 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-06-14T15:50:49.922Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-14T15:50:49.932Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-14T15:50:49.932Z] > authorizing via signed-in user
+[debug] [2018-06-14T15:50:49.933Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-06-14T15:50:49.934Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/5SxwgmyktNXbgjOKlm7FsfthOVXNsFesJMCRZk1legc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Jun 14 2018 11:50:49 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-06-14T15:50:50.067Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-14T15:50:50.073Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/patientwebsite1  
+  
+ Thu Jun 14 2018 11:50:50 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-06-14T15:50:50.519Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-14T15:50:50.521Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/patientwebsite1/tokens  
+  
+ Thu Jun 14 2018 11:50:50 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-06-14T15:50:50.917Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-14T15:50:50.918Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/patientwebsite1  
+  
+ Thu Jun 14 2018 11:50:50 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-06-14T15:50:51.181Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kevin\Desktop\PatientWebsite'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-06-14T15:50:51.982Z] Fetching environment
+[debug] [2018-06-14T15:50:51.985Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1041047568634:getServerAppConfig  
+  
+ Thu Jun 14 2018 11:50:51 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-06-14T15:50:51.985Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1041047568634/clients/_:getWebAppConfig  
+  
+ Thu Jun 14 2018 11:50:51 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-06-14T15:50:52.327Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-06-14T15:50:52.402Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-14T15:50:52.402Z] Starting @google-cloud/functions-emulator
+[debug] [2018-06-14T15:50:53.967Z] Parsing function triggers
+[info] +  functions: generate: http://localhost:5001/patientwebsite1/us-central1/generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate
+[info] [hosting] Rewriting /generate to local function generate

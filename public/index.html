@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PatientWebsite</title>
+
+  <!-- Import and configure the Firebase SDK -->
+  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+  <script src="/__/firebase/5.0.0/firebase-app.js"></script>
+  <script src="/__/firebase/5.0.0/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+
+  <script type="text/javascript">
+    function login() {
+      if (firebase.auth().currentUser) {
+        firebase.auth().signOut();
+      } else {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if (email.length < 1) {
+          alert('Please enter an email address.');
+          return;
+        }
+        if (password.length < 1) {
+          alert('Please enter a password.');
+          return;
+        }
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else {
+            alert(errorMessage);
+          }
+          document.getElementById('quickstart-sign-in').disabled = false;
+        });
+      }
+      document.getElementById('quickstart-sign-in').disabled = true;
+    }
+    function initApp() {
+      // authentication listener
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+		  window.location.replace("/generator.html");
+        } else {
+          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+        }
+        document.getElementById('quickstart-sign-in').disabled = false;
+      });
+      document.getElementById('quickstart-sign-in').addEventListener('click', login, false);
+    }
+
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+</head>
+<body style="background-color: rgb(105,105,105);">
+	<div style = "text-align: center;">
+        <h2>Login Authentication</h2>
+    </div>
+    <div style="background-color: rgb(94, 123, 184); width: 60%; border: 3px solid rgb(33, 105, 173); padding: 20px; text-align: center; margin: auto;">
+		<p>Enter an email and password below to login</p>
+        <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+        &nbsp;&nbsp;&nbsp;
+        <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+        <br/><br/>
+        <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+    </div>
+</body>
+</html>
