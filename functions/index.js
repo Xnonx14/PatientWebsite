@@ -116,7 +116,7 @@ exports.generate = functions.https.onRequest((request, response) => {
 		if(b.r8 !== "") arr[arr.length] = b.r8;
 		if(b.r9 !== "") arr[arr.length] = b.r9;
 		
-		p1 += " Patient reports that " + time + " " + pronoun + " has been experiencing episodes of " + locat + " chest discomfort, described as " + arrFormatNoAnd(arr);
+		p1 += "&nbspPatient reports that " + time + " " + pronoun + " has been experiencing episodes of " + locat + " chest discomfort, described as " + arrFormatNoAnd(arr);
 		
 		
 		arr = new Array();
@@ -154,7 +154,7 @@ exports.generate = functions.https.onRequest((request, response) => {
 			p1 += p2;
 		}		
 	}else{
-		p1 += " Patient denies chest pain"
+		p1 += "&nbspPatient denies chest pain"
 	}
 	p1 = endSentence(p1);
 	//SOB
@@ -235,9 +235,9 @@ function endSentence(str){
 		if(str.charAt(str.length-2) === '.' && str.charAt(str.length-1) === ' '){
 			return str;
 		}else if(str.charAt(str.length-1) === '.'){
-			return str+" ";
+			return str+"&nbsp";
 		}else{
-			return str+". ";
+			return str+".&nbsp";
 		}
 	}else{
 		return "";
