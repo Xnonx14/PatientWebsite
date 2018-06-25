@@ -31,14 +31,6 @@
       });
       document.getElementById('signout').addEventListener('click', login, false);
     }
-	function toggleDisplay(){
-		if(document.getElementById("toggleCP").checked){
-			document.getElementById("testID").style.display = "contents";
-		}else{
-			document.getElementById("testID").style.display = "none";
-		}
-		
-	}
 
     window.onload = function() {
       initApp();
@@ -116,8 +108,8 @@
 			</table>
 			<br><br>
 			Chest Pain Details <br><br>
-			<input id="toggleCP" name ="chestpain"  type="checkbox" onclick="toggleDisplay();"> Has Chest Pain <br>
-			<div id="testID" style="display: none"> 
+			<input id="toggleCP" name ="chestpain"  type="checkbox"> Has Chest Pain <br>
+			<div> 
 			<table align="center" style = "border: 2px solid black; width: 500px; height: 100px; border-collapse:collapse">
 				<tr style="border-bottom:1pt dotted black;">
 					<td align="left">Period</td>
@@ -323,7 +315,7 @@
 					</tr>
 					<tr style="border-bottom:1pt dotted black;">
 						<td>
-							<input name ="e17"  type="checkbox" value="Followup -"> Followup<br>
+							<input name ="e17"  type="checkbox" value="Followup -" checked> Followup<br>
 						</td>
 					</tr>
 					<tr style="border-bottom:1pt dotted black;">
